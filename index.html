@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <title>智者·大成</title>
+    <script src="js/commom.js"></script>
+    <script type="text/javascript">
+        (function(doc,win){
+            var docEl = doc.documentElement,resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function(){
+                        var clientWidth = docEl.clientWidth;
+                        if(!clientWidth) return;
+                        if(clientWidth>=640){
+                            docEl.style.fontSize = '100px'; //1rem  = 100px
+                        }
+                        else{
+                            docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                        }
+                    };
+                    if (!doc.addEventListener) return;
+                    win.addEventListener(resizeEvt, recalc, false);
+                    doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document,window);
+        window.onload=function(){
+            var down=document.getElementById('download');
+            var act=document.getElementById('active');
+            enter(act,"./imgs/hd_down.9_21.png");
+            enter(down,"./imgs/hddoaload_d.9_12.png")
+        }
+    </script>
+    <style type="text/css">
+        *{
+            margin: 0;padding: 0;
+        }
+        html,body{
+            width: 100%;height: 100%;background-color: #000;
+        }
+        #box{
+            width: 100%;height: 100%;background-color: #000;display:-webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-moz-box-orient:vertical;-moz-box-direction:normal;flex-direction:column;-webkit-flex-direction:column;
+        }
+        .header{
+            padding: .4rem;
+        }
+        .logo{
+            width: 2.38rem;height: .6rem;line-height: .4rem; float: left;background: url('imgs/logo.png') no-repeat;background-size: 100%;
+        }
+        .header .title{
+            width: .8rem;height: .19rem;float: right;background: url('imgs/title.png') no-repeat;background-size: 100%;margin-top: .2rem;
+        }
+        .content{
+            box-flex:1;-webkit-box-flex:1;-moz-box-flex:1;flex:1;-webkit-flex:1;
+        }
+        .content .title{
+            background: url(imgs/title.9.png) no-repeat;width: 3.2rem;height: 1.4rem;margin-left: 50%;transform: translateX(-50%);margin-top: .8rem;
+        }
+        .content .img{
+            background: url(imgs/pic1.9_65.png) no-repeat;background-size: 100%;width: 100%;height: 5rem;
+        }
+        .content .btn{
+            margin-top: -.4rem;
+        }
+        .btn a{
+            text-decoration: none;width: 3.68rem;height: 1.52rem;display: block;margin-left: 50%;transform: translateX(-50%);
+        }
+        .btn .active{
+            background: url(imgs/hd.9_10.png) no-repeat;background-size: 100%;
+        }
+        .btn .d-load{
+            background: url(imgs/hddownload.9.png) no-repeat;background-size: 100%;margin-top: -.32rem;
+        }
+        #box{
+            animation: run 3s linear;
+        }
+        @keyframes run{
+                0%{
+                    opacity:.2;
+                }
+                50%{
+                    opacity:.6;
+                }
+                100%{
+                    opacity:1;
+                }
+            }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="header">
+            <div class="logo"></div>
+            <div class="title"></div>
+        </div>
+        <div class="content">
+            <div class="title"></div>
+            <div class="img"></div>
+            <div class="btn">
+                <a id="active" class="active" href="active.html"></a>
+                <a id="download" class="d-load" href="download.html"></a>
+            </div>
+            <div style="clear:both"></div>
+        </div>
+    </div
+</body>
+</html>

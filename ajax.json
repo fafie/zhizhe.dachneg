@@ -1,0 +1,19 @@
+{
+    "data":{
+        "内景":[
+            {"id":11,
+             "changjing":"内景",
+             "imageurl":"http://7xr70a.com2.z0.glb.qiniucdn.com/14920481326734-15012G52133.jpg",
+         "bianhao":"1"}
+     ],
+        "外景":[
+            {"id":12,
+            "changjing":"外景",
+            "imageurl":"http://7xr70a.com2.z0.glb.qiniucdn.com/14920481355001455526111630499.jpg",
+           "bianhao":"1"},
+           {"id":13,
+           "changjing":"外景",
+           "imageurl":"http://7xr70a.com2.z0.glb.qiniucdn.com/1492050230125各方代表戴秉国.jpg",
+          "bianhao":"1"}
+      ]
+    }}

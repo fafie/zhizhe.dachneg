@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <meta http-equiv="refresh" content="3;url=index.html">
+    <title>智者·大成</title>
+    <script type="text/javascript">
+        (function(doc,win){
+            var docEl = doc.documentElement,resizeEvt = 'orientationchange' in window ? 'orientationchange' : 'resize',
+                    recalc = function(){
+                        var clientWidth = docEl.clientWidth;
+                        if(!clientWidth) return;
+                        if(clientWidth>=640){
+                            docEl.style.fontSize = '100px'; //1rem  = 100px
+                        }
+                        else{
+                            docEl.style.fontSize = 100 * (clientWidth / 640) + 'px';
+                        }
+                    };
+                    if (!doc.addEventListener) return;
+                    win.addEventListener(resizeEvt, recalc, false);
+                    doc.addEventListener('DOMContentLoaded', recalc, false);
+        })(document,window);
+        window.onload=function(){
+            function ani(){
+               var sp=document.getElementById('sp');
+               console.log(sp);
+               var run=document.getElementById('run');
+               var count=0;
+               var timer=null;
+                timer=setInterval(function(){
+                if(count<100){
+                    count++;
+                    sp.innerHTML=count;
+                    run.style.left=count/30+"rem";
+                    
+                }
+               },17)      
+        }
+        ani();
+        }
+    </script>
+    <style type="text/css">
+        *{
+            margin: 0;padding: 0;
+        }
+        html,body{
+            width: 100%;height: 100%;background-color: #000;
+        }
+        #box{
+            width: 100%;height: 100%;background-color: #000;display:-webkit-box;display: -moz-box;display: -ms-flexbox;display: -webkit-flex;display: flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-moz-box-orient:vertical;-moz-box-direction:normal;flex-direction:column;-webkit-flex-direction:column;position: relative;
+        }
+        .container{
+            width: 80%;
+            height: 2.5rem;
+            position: absolute;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            overflow: hidden;
+        }
+        a{
+           display: block;width: 3.6rem;height: 1.8rem;line-height: 1.46rem; float: left;background: url('imgs/logo.png') no-repeat;background-size: 100%;text-indent: -20rem;margin-left: 50%;transform: translateX(-50%);
+        }
+        .line{
+            width: 100%;height: .1rem;background: url(imgs/loading1.png) no-repeat;background-size: 100%; margin-top: 1.68rem;margin-bottom: -.4rem;
+        }
+        .run{
+            width: 1.6rem;height: .4rem;background: url(imgs/loading2.png) no-repeat;position: absolute;top:1.65rem;left:-2rem;/*transition: all 5s;*/
+        }
+        p{
+            color: #fff;font-size: 16px;text-align: center;margin-top: .8rem;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div class="container">
+            <a href="javascript:;">logo</a>
+            <div class="line"></div>
+            <div id="run" class="run"></div>
+            <p><span id="sp">0</span>%</p>
+        </div>
+    </div
+</body>
+</html>
